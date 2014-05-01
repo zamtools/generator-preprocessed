@@ -1,6 +1,8 @@
 # Generated on <%= (new Date).toISOString().split('T')[0] %> using <%= pkg.name %> <%= pkg.version %>
 
 module.exports = (grunt) ->
+    require('grunt-load-tasks')(grunt)
+
     grunt.initConfig
         yeoman:
             app:     'app'
@@ -74,13 +76,6 @@ module.exports = (grunt) ->
                     dest: '<%%= yeoman.scripts %>'
                     ext:  '.js'
                 ]
-
-    grunt.loadNpmTasks 'grunt-contrib-watch'
-    grunt.loadNpmTasks 'grunt-contrib-connect'
-    grunt.loadNpmTasks 'grunt-contrib-jade'
-    grunt.loadNpmTasks 'grunt-contrib-less'
-    grunt.loadNpmTasks 'grunt-autoprefixer'
-    grunt.loadNpmTasks 'grunt-contrib-coffee'
 
     grunt.registerTask 'compile', ['jade:dev', 'less:dev', 'autoprefixer', 'coffee:dev']
     grunt.registerTask 'server', ['compile', 'connect:dev', 'watch']
