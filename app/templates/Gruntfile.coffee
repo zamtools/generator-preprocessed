@@ -1,7 +1,7 @@
 # Generated on <%= (new Date).toISOString().split('T')[0] %> using <%= pkg.name %> <%= pkg.version %>
 
 module.exports = (grunt) ->
-    require('grunt-load-tasks')(grunt)
+    require('load-grunt-tasks')(grunt)
 
     grunt.initConfig
         yeoman:
